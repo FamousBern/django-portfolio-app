@@ -14,11 +14,14 @@ def sendmail(request):
     from_email = request.POST.get('from_email', '')
 
     if subject and message and from_email:
+
         try:
             send_mail(subject, message, from_email, ['bernardberbell@gmail.com'])
-        except BadHeaderError:
-            return HttpResponse('Invalid header found.')
-        return HttpResponseRedirect('/index/')
+            return HttpResponseRedirect('/index/')
+
+        except:
+            
+            return HttpResponseRedirect('/index/')
 
     else:
         # In reality we'd use a form class
