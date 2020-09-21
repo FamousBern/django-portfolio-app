@@ -223,11 +223,11 @@
 
 					<p>You can write to me through this form.</p>
 
-					<form method="post" action="#">
+					<form method="POST" action="{% url 'sendmail' %}">
 						{% csrf_token %}
 						<div class="row">
 							<div class="col-6 col-12-mobilep">
-								<input type="text" name="name" placeholder="Name" />
+								<input type="text" name="subject" placeholder="Name" />
 							</div>
 							<div class="col-6 col-12-mobilep">
 								<input type="email" name="email" placeholder="Email" />
